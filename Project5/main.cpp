@@ -36,8 +36,8 @@
 #include "LevelB.h"
 
 // ––––– CONSTANTS ––––– //
-constexpr int WINDOW_WIDTH  = 640,
-          WINDOW_HEIGHT = 480;
+constexpr int WINDOW_WIDTH  = 640 * 2,
+          WINDOW_HEIGHT = 800;
 
 constexpr float BG_RED     = 0.1922f,
             BG_BLUE    = 0.549f,
@@ -74,6 +74,7 @@ float g_previous_ticks = 0.0f;
 float g_accumulator = 0.0f;
 
 bool g_is_colliding_bottom = false;
+bool attacking = false;
 
 // ––––– GENERAL FUNCTIONS ––––– //
 void switch_to_scene(Scene *scene)
@@ -85,7 +86,7 @@ void switch_to_scene(Scene *scene)
 void initialise()
 {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
-    g_display_window = SDL_CreateWindow("Hello, Shaders!",
+    g_display_window = SDL_CreateWindow("Project 5",
                                       SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                       WINDOW_WIDTH, WINDOW_HEIGHT,
                                       SDL_WINDOW_OPENGL);
@@ -130,7 +131,8 @@ void process_input()
 {
     // VERY IMPORTANT: If nothing is pressed, we don't want to go anywhere
     g_current_scene->get_state().player->set_movement(glm::vec3(0.0f));
-    
+    g_current_scene->get_state().player->set_animation_state(DEFAULT);
+
     SDL_Event event;
     while (SDL_PollEvent(&event))
     {
@@ -167,12 +169,23 @@ void process_input()
     }
     
     const Uint8 *key_state = SDL_GetKeyboardState(NULL);
-
+        
+    if (key_state[SDL_SCANCODE_A]) {
+        g_current_scene->get_state().player->attack();
+        attacking = true;
+    }
+    else {
+        attacking = false;
+    }
+    
+    if (!attacking){
         if (key_state[SDL_SCANCODE_LEFT])        g_current_scene->get_state().player->move_left();
-            else if (key_state[SDL_SCANCODE_RIGHT])  g_current_scene->get_state().player->move_right();
+        else if (key_state[SDL_SCANCODE_RIGHT])  g_current_scene->get_state().player->move_right();
+    }
+     
              
-        if (glm::length( g_current_scene->get_state().player->get_movement()) > 1.0f)
-            g_current_scene->get_state().player->normalise_movement();
+    if (glm::length( g_current_scene->get_state().player->get_movement()) > 1.0f)
+        g_current_scene->get_state().player->normalise_movement();
 }
 
 void update()
@@ -247,6 +260,7 @@ int main(int argc, char* argv[])
         
         render();
     }
+    
     
     shutdown();
     return 0;

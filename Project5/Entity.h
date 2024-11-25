@@ -104,6 +104,7 @@ public:
     void move_right() { m_movement.x = 1.0f;  face_right(); set_animation_state(RUN); }
     void move_up() { m_movement.y = 1.0f;  face_up(); }
     void move_down() { m_movement.y = -1.0f; face_down(); }
+    void attack() { set_animation_state(ATTACK); }
 
     void const jump() { m_is_jumping = true; }
 

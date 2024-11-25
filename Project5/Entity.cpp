@@ -23,7 +23,7 @@ void Entity::ai_activate(Entity *player, float delta_time)
         m_movement = glm::vec3(movement, 0.0f, 0.0f);
             
         if (m_collided_bottom) {
-            set_jumping_power(7.0f);
+            set_jumping_power(5.0f);
             jump();
         }
     }

@@ -111,7 +111,7 @@ void LevelA::initialise()
 
 void LevelA::update(float delta_time)
 {
-    m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    int playerCollsion = m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
     std::cout << "Player X: " << m_game_state.player->get_position().x << std::endl;
     std::cout << "Player Y: " << m_game_state.player->get_position().y << std::endl;
 
@@ -128,7 +128,9 @@ void LevelA::render(ShaderProgram *program)
     m_game_state.map->render(program);
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
-        m_game_state.enemies[i].render(program);
+        if (m_game_state.enemies[i].isActive()){
+            m_game_state.enemies[i].render(program);
+        }
     }
     m_game_state.player->render(program);
 }
