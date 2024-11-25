@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842DC6772CA644DF0052A9C3 /* shield.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 842DC6762CA644D20052A9C3 /* shield.png */; };
 		842DC67A2CA645EF0052A9C3 /* starter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842DC6782CA645EF0052A9C3 /* starter.cpp */; };
-		84651B172C17EB5100817E28 /* kano.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84651B162C17EAFE00817E28 /* kano.png */; };
 		84651B1A2C17ED4900817E28 /* completed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84651B192C17ED4900817E28 /* completed.cpp */; };
 		BF6AAD372CF414E900690510 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD362CF414E900690510 /* Map.cpp */; };
 		BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD392CF4150900690510 /* Entity.cpp */; };
@@ -25,6 +23,19 @@
 		BF6AAD5E2CF418B100690510 /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD572CF418B100690510 /* Level2.cpp */; };
 		BF6AAD5F2CF418B100690510 /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD552CF418B100690510 /* Level1.cpp */; };
 		BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD612CF4192F00690510 /* Scene.cpp */; };
+		BF6AAD682CF502F700690510 /* Meow-Knight_Attack_3.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD632CF43F1100690510 /* Meow-Knight_Attack_3.png */; };
+		BF6AAD692CF502F700690510 /* Meow-Knight_Death.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD642CF43F1100690510 /* Meow-Knight_Death.png */; };
+		BF6AAD6A2CF502F700690510 /* Meow-Knight_Dodge.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD652CF43F1100690510 /* Meow-Knight_Dodge.png */; };
+		BF6AAD6B2CF502F700690510 /* Meow-Knight_Idle.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD662CF43F1100690510 /* Meow-Knight_Idle.png */; };
+		BF6AAD6C2CF502F700690510 /* Meow-Knight_Take_Damage.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD672CF43F1100690510 /* Meow-Knight_Take_Damage.png */; };
+		BF6AAD712CF503E900690510 /* LevelB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD702CF503E900690510 /* LevelB.cpp */; };
+		BF6AAD722CF503E900690510 /* LevelA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD6E2CF503E900690510 /* LevelA.cpp */; };
+		BF6AAD7B2CF5054A00690510 /* bounce.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD752CF504AD00690510 /* bounce.wav */; };
+		BF6AAD7C2CF5054A00690510 /* dooblydoo.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD762CF504C200690510 /* dooblydoo.mp3 */; };
+		BF6AAD7D2CF5054A00690510 /* george_0.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD772CF504C200690510 /* george_0.png */; };
+		BF6AAD7E2CF5054A00690510 /* platformPack_tile027.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD782CF504C200690510 /* platformPack_tile027.png */; };
+		BF6AAD7F2CF5054A00690510 /* soph.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD792CF504C200690510 /* soph.png */; };
+		BF6AAD802CF5054A00690510 /* tileset.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD7A2CF504C200690510 /* tileset.png */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -46,21 +57,28 @@
 				BF6AAD4D2CF4176500690510 /* enemy1.png in CopyFiles */,
 				BF6AAD502CF4176900690510 /* font1.png in CopyFiles */,
 				BF6AAD522CF4176E00690510 /* new_tilemap.png in CopyFiles */,
-				BF6AAD512CF4176C00690510 /* galactic.mp3 in CopyFiles */,
 				BF6AAD4F2CF4176800690510 /* enemy3.png in CopyFiles */,
+				BF6AAD682CF502F700690510 /* Meow-Knight_Attack_3.png in CopyFiles */,
+				BF6AAD692CF502F700690510 /* Meow-Knight_Death.png in CopyFiles */,
+				BF6AAD6A2CF502F700690510 /* Meow-Knight_Dodge.png in CopyFiles */,
+				BF6AAD6B2CF502F700690510 /* Meow-Knight_Idle.png in CopyFiles */,
+				BF6AAD7B2CF5054A00690510 /* bounce.wav in CopyFiles */,
+				BF6AAD7C2CF5054A00690510 /* dooblydoo.mp3 in CopyFiles */,
+				BF6AAD7D2CF5054A00690510 /* george_0.png in CopyFiles */,
+				BF6AAD7E2CF5054A00690510 /* platformPack_tile027.png in CopyFiles */,
+				BF6AAD7F2CF5054A00690510 /* soph.png in CopyFiles */,
+				BF6AAD802CF5054A00690510 /* tileset.png in CopyFiles */,
+				BF6AAD6C2CF502F700690510 /* Meow-Knight_Take_Damage.png in CopyFiles */,
 				BF6AAD4E2CF4176700690510 /* enemy2.png in CopyFiles */,
+				BF6AAD512CF4176C00690510 /* galactic.mp3 in CopyFiles */,
 				BF6AAD532CF4177000690510 /* retro-jump-3-236683.wav in CopyFiles */,
-				842DC6772CA644DF0052A9C3 /* shield.png in CopyFiles */,
-				84651B172C17EB5100817E28 /* kano.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		842DC6762CA644D20052A9C3 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
 		842DC6782CA645EF0052A9C3 /* starter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = starter.cpp; sourceTree = "<group>"; };
-		84651B162C17EAFE00817E28 /* kano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kano.png; sourceTree = "<group>"; };
 		84651B192C17ED4900817E28 /* completed.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = completed.cpp; sourceTree = "<group>"; };
 		BF6AAD352CF414E900690510 /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		BF6AAD362CF414E900690510 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
@@ -83,6 +101,21 @@
 		BF6AAD5B2CF418B100690510 /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
 		BF6AAD602CF4192F00690510 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		BF6AAD612CF4192F00690510 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		BF6AAD632CF43F1100690510 /* Meow-Knight_Attack_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meow-Knight_Attack_3.png"; sourceTree = "<group>"; };
+		BF6AAD642CF43F1100690510 /* Meow-Knight_Death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meow-Knight_Death.png"; sourceTree = "<group>"; };
+		BF6AAD652CF43F1100690510 /* Meow-Knight_Dodge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meow-Knight_Dodge.png"; sourceTree = "<group>"; };
+		BF6AAD662CF43F1100690510 /* Meow-Knight_Idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meow-Knight_Idle.png"; sourceTree = "<group>"; };
+		BF6AAD672CF43F1100690510 /* Meow-Knight_Take_Damage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meow-Knight_Take_Damage.png"; sourceTree = "<group>"; };
+		BF6AAD6D2CF503E900690510 /* LevelA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelA.h; sourceTree = "<group>"; };
+		BF6AAD6E2CF503E900690510 /* LevelA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelA.cpp; sourceTree = "<group>"; };
+		BF6AAD6F2CF503E900690510 /* LevelB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelB.h; sourceTree = "<group>"; };
+		BF6AAD702CF503E900690510 /* LevelB.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelB.cpp; sourceTree = "<group>"; };
+		BF6AAD752CF504AD00690510 /* bounce.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bounce.wav; sourceTree = "<group>"; };
+		BF6AAD762CF504C200690510 /* dooblydoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dooblydoo.mp3; sourceTree = "<group>"; };
+		BF6AAD772CF504C200690510 /* george_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = george_0.png; sourceTree = "<group>"; };
+		BF6AAD782CF504C200690510 /* platformPack_tile027.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_tile027.png; sourceTree = "<group>"; };
+		BF6AAD792CF504C200690510 /* soph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soph.png; sourceTree = "<group>"; };
+		BF6AAD7A2CF504C200690510 /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* Project5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project5; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -142,6 +175,10 @@
 		DBDF1B512323DE3F007CECB1 /* Project5 */ = {
 			isa = PBXGroup;
 			children = (
+				BF6AAD6D2CF503E900690510 /* LevelA.h */,
+				BF6AAD6E2CF503E900690510 /* LevelA.cpp */,
+				BF6AAD6F2CF503E900690510 /* LevelB.h */,
+				BF6AAD702CF503E900690510 /* LevelB.cpp */,
 				BF6AAD542CF418B100690510 /* Level1.h */,
 				BF6AAD552CF418B100690510 /* Level1.cpp */,
 				BF6AAD562CF418B100690510 /* Level2.h */,
@@ -150,9 +187,7 @@
 				BF6AAD592CF418B100690510 /* Level3.cpp */,
 				BF6AAD5A2CF418B100690510 /* Utility.h */,
 				BF6AAD5B2CF418B100690510 /* Utility.cpp */,
-				842DC6762CA644D20052A9C3 /* shield.png */,
 				84651B182C17ED2400817E28 /* files */,
-				84651B162C17EAFE00817E28 /* kano.png */,
 				DBDF1B5B2323DE8D007CECB1 /* glm */,
 				DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */,
 				DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */,
@@ -172,6 +207,17 @@
 				BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */,
 				BF6AAD602CF4192F00690510 /* Scene.h */,
 				BF6AAD612CF4192F00690510 /* Scene.cpp */,
+				BF6AAD632CF43F1100690510 /* Meow-Knight_Attack_3.png */,
+				BF6AAD642CF43F1100690510 /* Meow-Knight_Death.png */,
+				BF6AAD652CF43F1100690510 /* Meow-Knight_Dodge.png */,
+				BF6AAD662CF43F1100690510 /* Meow-Knight_Idle.png */,
+				BF6AAD672CF43F1100690510 /* Meow-Knight_Take_Damage.png */,
+				BF6AAD752CF504AD00690510 /* bounce.wav */,
+				BF6AAD762CF504C200690510 /* dooblydoo.mp3 */,
+				BF6AAD772CF504C200690510 /* george_0.png */,
+				BF6AAD782CF504C200690510 /* platformPack_tile027.png */,
+				BF6AAD792CF504C200690510 /* soph.png */,
+				BF6AAD7A2CF504C200690510 /* tileset.png */,
 			);
 			path = Project5;
 			sourceTree = "<group>";
@@ -219,6 +265,7 @@
 				TargetAttributes = {
 					DBDF1B4E2323DE3F007CECB1 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1600;
 					};
 				};
 			};
@@ -249,6 +296,8 @@
 				842DC67A2CA645EF0052A9C3 /* starter.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
 				BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */,
+				BF6AAD712CF503E900690510 /* LevelB.cpp in Sources */,
+				BF6AAD722CF503E900690510 /* LevelA.cpp in Sources */,
 				BF6AAD5C2CF418B100690510 /* Utility.cpp in Sources */,
 				BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */,
 				BF6AAD5D2CF418B100690510 /* Level3.cpp in Sources */,
@@ -375,6 +424,7 @@
 		DBDF1B572323DE3F007CECB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,12 +441,15 @@
 					/Library/Frameworks/SDL2_mixer.framework/Versions/A/Headers,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
 		DBDF1B582323DE3F007CECB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,6 +466,7 @@
 					/Library/Frameworks/SDL2_mixer.framework/Versions/A/Headers,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
