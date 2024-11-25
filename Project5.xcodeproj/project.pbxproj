@@ -13,6 +13,18 @@
 		84651B1A2C17ED4900817E28 /* completed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84651B192C17ED4900817E28 /* completed.cpp */; };
 		BF6AAD372CF414E900690510 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD362CF414E900690510 /* Map.cpp */; };
 		BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD392CF4150900690510 /* Entity.cpp */; };
+		BF6AAD4D2CF4176500690510 /* enemy1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3B2CF416FE00690510 /* enemy1.png */; };
+		BF6AAD4E2CF4176700690510 /* enemy2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3C2CF416FE00690510 /* enemy2.png */; };
+		BF6AAD4F2CF4176800690510 /* enemy3.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3D2CF416FE00690510 /* enemy3.png */; };
+		BF6AAD502CF4176900690510 /* font1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3E2CF416FE00690510 /* font1.png */; };
+		BF6AAD512CF4176C00690510 /* galactic.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3F2CF416FE00690510 /* galactic.mp3 */; };
+		BF6AAD522CF4176E00690510 /* new_tilemap.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD402CF416FE00690510 /* new_tilemap.png */; };
+		BF6AAD532CF4177000690510 /* retro-jump-3-236683.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */; };
+		BF6AAD5C2CF418B100690510 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD5B2CF418B100690510 /* Utility.cpp */; };
+		BF6AAD5D2CF418B100690510 /* Level3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD592CF418B100690510 /* Level3.cpp */; };
+		BF6AAD5E2CF418B100690510 /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD572CF418B100690510 /* Level2.cpp */; };
+		BF6AAD5F2CF418B100690510 /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD552CF418B100690510 /* Level1.cpp */; };
+		BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD612CF4192F00690510 /* Scene.cpp */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -31,6 +43,13 @@
 			dstSubfolderSpec = 6;
 			files = (
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
+				BF6AAD4D2CF4176500690510 /* enemy1.png in CopyFiles */,
+				BF6AAD502CF4176900690510 /* font1.png in CopyFiles */,
+				BF6AAD522CF4176E00690510 /* new_tilemap.png in CopyFiles */,
+				BF6AAD512CF4176C00690510 /* galactic.mp3 in CopyFiles */,
+				BF6AAD4F2CF4176800690510 /* enemy3.png in CopyFiles */,
+				BF6AAD4E2CF4176700690510 /* enemy2.png in CopyFiles */,
+				BF6AAD532CF4177000690510 /* retro-jump-3-236683.wav in CopyFiles */,
 				842DC6772CA644DF0052A9C3 /* shield.png in CopyFiles */,
 				84651B172C17EB5100817E28 /* kano.png in CopyFiles */,
 			);
@@ -47,6 +66,23 @@
 		BF6AAD362CF414E900690510 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		BF6AAD382CF4150900690510 /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		BF6AAD392CF4150900690510 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		BF6AAD3B2CF416FE00690510 /* enemy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy1.png; sourceTree = "<group>"; };
+		BF6AAD3C2CF416FE00690510 /* enemy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy2.png; sourceTree = "<group>"; };
+		BF6AAD3D2CF416FE00690510 /* enemy3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy3.png; sourceTree = "<group>"; };
+		BF6AAD3E2CF416FE00690510 /* font1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font1.png; sourceTree = "<group>"; };
+		BF6AAD3F2CF416FE00690510 /* galactic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = galactic.mp3; sourceTree = "<group>"; };
+		BF6AAD402CF416FE00690510 /* new_tilemap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_tilemap.png; sourceTree = "<group>"; };
+		BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "retro-jump-3-236683.wav"; sourceTree = "<group>"; };
+		BF6AAD542CF418B100690510 /* Level1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
+		BF6AAD552CF418B100690510 /* Level1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
+		BF6AAD562CF418B100690510 /* Level2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
+		BF6AAD572CF418B100690510 /* Level2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level2.cpp; sourceTree = "<group>"; };
+		BF6AAD582CF418B100690510 /* Level3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level3.h; sourceTree = "<group>"; };
+		BF6AAD592CF418B100690510 /* Level3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level3.cpp; sourceTree = "<group>"; };
+		BF6AAD5A2CF418B100690510 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		BF6AAD5B2CF418B100690510 /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		BF6AAD602CF4192F00690510 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		BF6AAD612CF4192F00690510 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* Project5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project5; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -106,6 +142,14 @@
 		DBDF1B512323DE3F007CECB1 /* Project5 */ = {
 			isa = PBXGroup;
 			children = (
+				BF6AAD542CF418B100690510 /* Level1.h */,
+				BF6AAD552CF418B100690510 /* Level1.cpp */,
+				BF6AAD562CF418B100690510 /* Level2.h */,
+				BF6AAD572CF418B100690510 /* Level2.cpp */,
+				BF6AAD582CF418B100690510 /* Level3.h */,
+				BF6AAD592CF418B100690510 /* Level3.cpp */,
+				BF6AAD5A2CF418B100690510 /* Utility.h */,
+				BF6AAD5B2CF418B100690510 /* Utility.cpp */,
 				842DC6762CA644D20052A9C3 /* shield.png */,
 				84651B182C17ED2400817E28 /* files */,
 				84651B162C17EAFE00817E28 /* kano.png */,
@@ -119,6 +163,15 @@
 				BF6AAD362CF414E900690510 /* Map.cpp */,
 				BF6AAD382CF4150900690510 /* Entity.h */,
 				BF6AAD392CF4150900690510 /* Entity.cpp */,
+				BF6AAD3B2CF416FE00690510 /* enemy1.png */,
+				BF6AAD3C2CF416FE00690510 /* enemy2.png */,
+				BF6AAD3D2CF416FE00690510 /* enemy3.png */,
+				BF6AAD3E2CF416FE00690510 /* font1.png */,
+				BF6AAD3F2CF416FE00690510 /* galactic.mp3 */,
+				BF6AAD402CF416FE00690510 /* new_tilemap.png */,
+				BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */,
+				BF6AAD602CF4192F00690510 /* Scene.h */,
+				BF6AAD612CF4192F00690510 /* Scene.cpp */,
 			);
 			path = Project5;
 			sourceTree = "<group>";
@@ -196,6 +249,11 @@
 				842DC67A2CA645EF0052A9C3 /* starter.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
 				BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */,
+				BF6AAD5C2CF418B100690510 /* Utility.cpp in Sources */,
+				BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */,
+				BF6AAD5D2CF418B100690510 /* Level3.cpp in Sources */,
+				BF6AAD5E2CF418B100690510 /* Level2.cpp in Sources */,
+				BF6AAD5F2CF418B100690510 /* Level1.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
