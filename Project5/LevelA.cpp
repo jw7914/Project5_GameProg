@@ -86,13 +86,16 @@ void LevelA::initialise()
 
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
-        m_game_state.enemies[i] =  Entity(enemy_texture_id, 0.0f, 1.0f, 1.0f, ENEMY, WALKING);
+        m_game_state.enemies[i] =  Entity(enemy_texture_id, 0.0f, 1.0f, 1.0f, ENEMY, PATROL);
+        m_game_state.enemies[i].set_scale(glm::vec3(1.0f,1.0f,0.0f));
+        m_game_state.enemies[i].set_movement(glm::vec3(0.0f));
+        m_game_state.enemies[i].set_acceleration(glm::vec3(0.0f, -9.81f, 0.0f));
+        m_game_state.enemies[i].activate();
+        m_game_state.enemies[i].set_entity_type(ENEMY);
+        m_game_state.enemies[i].set_speed(1.0f);
+        m_game_state.enemies[i].set_ai_type(PATROL);
+        m_game_state.enemies[i].set_position(glm::vec3(6.0f, -3.0f, 0.0f));
     }
-
-
-    m_game_state.enemies[0].set_position(glm::vec3(7.0f, -2.0f, 0.0f));
-    m_game_state.enemies[0].set_movement(glm::vec3(0.0f));
-    m_game_state.enemies[0].set_acceleration(glm::vec3(0.0f, -9.81f, 0.0f));
     
     /**
      BGM and SFX
@@ -109,6 +112,9 @@ void LevelA::initialise()
 void LevelA::update(float delta_time)
 {
     m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    std::cout << "Player X: " << m_game_state.player->get_position().x << std::endl;
+    std::cout << "Player Y: " << m_game_state.player->get_position().y << std::endl;
+
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
         m_game_state.enemies[i].update(delta_time, m_game_state.player, NULL, 0, m_game_state.map);

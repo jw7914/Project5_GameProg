@@ -18,12 +18,12 @@ void Entity::ai_activate(Entity *player, float delta_time)
 
     if (m_ai_type == PATROL){
         m_theta += 1.0f * delta_time;
-        float movement = glm::sin(m_theta) * 1.5f;
+        float movement = glm::sin(m_theta) * 2.5f;
 
         m_movement = glm::vec3(movement, 0.0f, 0.0f);
             
         if (m_collided_bottom) {
-            set_jumping_power(10.0f);
+            set_jumping_power(7.0f);
             jump();
         }
     }
