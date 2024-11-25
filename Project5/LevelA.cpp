@@ -5,19 +5,19 @@
 #define LEVEL_HEIGHT 8
 
 constexpr char SPRITESHEET_FILEPATH[] = "george_0.png",
-           ENEMY_FILEPATH[]       = "soph.png";
+           ENEMY_FILEPATH[]       = "enemy1.png";
 
 
 unsigned int LEVELA_DATA[] =
 {
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-    3, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2,
-    3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    4, 0, 0, 0, 0, 0, 80, 80, 80, 80, 80, 0, 0, 0,
+    4, 0, 0, 0, 0, 80, 120, 120, 120, 120, 120, 80, 0, 0,
+    4, 0, 0, 0, 80, 120, 120, 120, 120, 120, 120, 120, 80, 0,
+    4, 0, 0, 80, 120, 120, 120, 120, 120, 120, 120, 120, 120, 80,
+    4, 80, 80, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120
 };
 
 LevelA::~LevelA()
@@ -33,8 +33,8 @@ void LevelA::initialise()
 {
     m_game_state.next_scene_id = -1;
     
-    GLuint map_texture_id = Utility::load_texture("tileset.png");
-    m_game_state.map = new Map(LEVEL_WIDTH, LEVEL_HEIGHT, LEVELA_DATA, map_texture_id, 1.0f, 4, 1);
+    GLuint map_texture_id = Utility::load_texture("new_tilemap.png");
+    m_game_state.map = new Map(LEVEL_WIDTH, LEVEL_HEIGHT, LEVELA_DATA, map_texture_id, 1.0f, 20, 9);
     
     // Code from main.cpp's initialise()
     /**
@@ -69,7 +69,7 @@ void LevelA::initialise()
         PLAYER
     );
         
-    m_game_state.player->set_position(glm::vec3(5.0f, 0.0f, 0.0f));
+    m_game_state.player->set_position(glm::vec3(1.0f, -3.0f, 0.0f));
 
     // Jumping
     m_game_state.player->set_jumping_power(3.0f);
@@ -82,14 +82,13 @@ void LevelA::initialise()
 
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
-    m_game_state.enemies[i] =  Entity(enemy_texture_id, 1.0f, 1.0f, 1.0f, ENEMY, GUARD, IDLE);
+        m_game_state.enemies[i] =  Entity(enemy_texture_id, 1.0f, 1.0f, 1.0f, ENEMY, GUARD, IDLE);
     }
 
 
-    m_game_state.enemies[0].set_position(glm::vec3(8.0f, 0.0f, 0.0f));
+    m_game_state.enemies[0].set_position(glm::vec3(5.0f, -2.0f, 0.0f));
     m_game_state.enemies[0].set_movement(glm::vec3(0.0f));
     m_game_state.enemies[0].set_acceleration(glm::vec3(0.0f, -9.81f, 0.0f));
-    
     
     /**
      BGM and SFX
@@ -106,6 +105,10 @@ void LevelA::initialise()
 void LevelA::update(float delta_time)
 {
     m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    for (int i = 0; i < ENEMY_COUNT; i++)
+    {
+        m_game_state.enemies[i].update(delta_time, m_game_state.player, NULL, NULL, m_game_state.map);
+    }
     
     if (m_game_state.player->get_position().y < -10.0f) m_game_state.next_scene_id = 1;
 }
@@ -113,5 +116,9 @@ void LevelA::update(float delta_time)
 void LevelA::render(ShaderProgram *program)
 {
     m_game_state.map->render(program);
+    for (int i = 0; i < ENEMY_COUNT; i++)
+    {
+        m_game_state.enemies[i].render(program);
+    }
     m_game_state.player->render(program);
 }

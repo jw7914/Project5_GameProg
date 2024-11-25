@@ -19,9 +19,6 @@
 		BF6AAD522CF4176E00690510 /* new_tilemap.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD402CF416FE00690510 /* new_tilemap.png */; };
 		BF6AAD532CF4177000690510 /* retro-jump-3-236683.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */; };
 		BF6AAD5C2CF418B100690510 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD5B2CF418B100690510 /* Utility.cpp */; };
-		BF6AAD5D2CF418B100690510 /* Level3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD592CF418B100690510 /* Level3.cpp */; };
-		BF6AAD5E2CF418B100690510 /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD572CF418B100690510 /* Level2.cpp */; };
-		BF6AAD5F2CF418B100690510 /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD552CF418B100690510 /* Level1.cpp */; };
 		BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD612CF4192F00690510 /* Scene.cpp */; };
 		BF6AAD682CF502F700690510 /* Meow-Knight_Attack_3.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD632CF43F1100690510 /* Meow-Knight_Attack_3.png */; };
 		BF6AAD692CF502F700690510 /* Meow-Knight_Death.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD642CF43F1100690510 /* Meow-Knight_Death.png */; };
@@ -91,12 +88,6 @@
 		BF6AAD3F2CF416FE00690510 /* galactic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = galactic.mp3; sourceTree = "<group>"; };
 		BF6AAD402CF416FE00690510 /* new_tilemap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_tilemap.png; sourceTree = "<group>"; };
 		BF6AAD412CF416FE00690510 /* retro-jump-3-236683.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "retro-jump-3-236683.wav"; sourceTree = "<group>"; };
-		BF6AAD542CF418B100690510 /* Level1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
-		BF6AAD552CF418B100690510 /* Level1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
-		BF6AAD562CF418B100690510 /* Level2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
-		BF6AAD572CF418B100690510 /* Level2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level2.cpp; sourceTree = "<group>"; };
-		BF6AAD582CF418B100690510 /* Level3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level3.h; sourceTree = "<group>"; };
-		BF6AAD592CF418B100690510 /* Level3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level3.cpp; sourceTree = "<group>"; };
 		BF6AAD5A2CF418B100690510 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		BF6AAD5B2CF418B100690510 /* Utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
 		BF6AAD602CF4192F00690510 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
@@ -179,12 +170,6 @@
 				BF6AAD6E2CF503E900690510 /* LevelA.cpp */,
 				BF6AAD6F2CF503E900690510 /* LevelB.h */,
 				BF6AAD702CF503E900690510 /* LevelB.cpp */,
-				BF6AAD542CF418B100690510 /* Level1.h */,
-				BF6AAD552CF418B100690510 /* Level1.cpp */,
-				BF6AAD562CF418B100690510 /* Level2.h */,
-				BF6AAD572CF418B100690510 /* Level2.cpp */,
-				BF6AAD582CF418B100690510 /* Level3.h */,
-				BF6AAD592CF418B100690510 /* Level3.cpp */,
 				BF6AAD5A2CF418B100690510 /* Utility.h */,
 				BF6AAD5B2CF418B100690510 /* Utility.cpp */,
 				84651B182C17ED2400817E28 /* files */,
@@ -300,9 +285,6 @@
 				BF6AAD722CF503E900690510 /* LevelA.cpp in Sources */,
 				BF6AAD5C2CF418B100690510 /* Utility.cpp in Sources */,
 				BF6AAD622CF4192F00690510 /* Scene.cpp in Sources */,
-				BF6AAD5D2CF418B100690510 /* Level3.cpp in Sources */,
-				BF6AAD5E2CF418B100690510 /* Level2.cpp in Sources */,
-				BF6AAD5F2CF418B100690510 /* Level1.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
