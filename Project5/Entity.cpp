@@ -29,7 +29,7 @@ void Entity::ai_activate(Entity *player, float delta_time)
     }
     if (m_ai_type == JUMPING) {
         if (m_collided_bottom) {
-            set_jumping_power(10.0f);
+            set_jumping_power(8.5f);
             jump();
         }
     }

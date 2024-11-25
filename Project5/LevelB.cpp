@@ -8,14 +8,14 @@ constexpr char ENEMY_FILEPATH[]       = "enemy2.png";
 
 unsigned int LEVELB_DATA[] =
 {
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2,
-    3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2,
-    3, 1, 1, 1, 1, 1, 1, 0, 1, 2, 2, 2, 2, 2,
-    3, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2
+    136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138,
+    136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138,
+    136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138,
+    136, 0, 118, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 136,
+    136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138,
+    136, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138,
+    138, 119, 119, 119, 119, 119, 119, 119, 119, 139, 0, 0, 0, 138,
+    136, 16, 16, 16, 16, 16, 16, 16, 16, 16, 0, 0, 0, 138
 };
 
 LevelB::~LevelB()
@@ -31,8 +31,8 @@ void LevelB::initialise()
 {
     m_game_state.next_scene_id = -1;
     
-    GLuint map_texture_id = Utility::load_texture("tileset.png");
-    m_game_state.map = new Map(LEVEL_WIDTH, LEVEL_HEIGHT, LEVELB_DATA, map_texture_id, 1.0f, 4, 1);
+    GLuint map_texture_id = Utility::load_texture("new_tilemap.png");
+    m_game_state.map = new Map(LEVEL_WIDTH, LEVEL_HEIGHT, LEVELB_DATA, map_texture_id, 1.0f, 20, 9);
     
     // Code from main.cpp's initialise()
     /**
@@ -75,7 +75,7 @@ void LevelB::initialise()
                                       DEFAULT
                                   );
         
-    m_game_state.player->set_position(glm::vec3(5.0f, 0.0f, 0.0f));
+    m_game_state.player->set_position(glm::vec3(11.0f, 0.0f, 0.0f));
 
     // Jumping
     m_game_state.player->set_jumping_power(3.0f);
@@ -88,13 +88,16 @@ void LevelB::initialise()
 
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
-        m_game_state.enemies[i] =  Entity(enemy_texture_id, 0.0f, 1.0f, 1.0f, ENEMY, PATROL);
+        m_game_state.enemies[i] =  Entity(enemy_texture_id, 0.0f, 0.75f, 1.0f, ENEMY, JUMPING);
+        m_game_state.enemies[i].set_scale(glm::vec3(1.0f,1.0f,0.0f));
+        m_game_state.enemies[i].set_movement(glm::vec3(0.0f));
+        m_game_state.enemies[i].set_acceleration(glm::vec3(0.0f, -9.81f, 0.0f));
+        m_game_state.enemies[i].activate();
+        m_game_state.enemies[i].set_entity_type(ENEMY);
+        m_game_state.enemies[i].set_speed(1.0f);
+        m_game_state.enemies[i].set_ai_type(JUMPING);
+        m_game_state.enemies[i].set_position(glm::vec3(1.0f, -5.0f, 0.0f));
     }
-
-
-    m_game_state.enemies[0].set_position(glm::vec3(8.0f, 0.0f, 0.0f));
-    m_game_state.enemies[0].set_movement(glm::vec3(0.0f));
-    m_game_state.enemies[0].set_acceleration(glm::vec3(0.0f, -9.81f, 0.0f));
     
     
     
@@ -105,19 +108,36 @@ void LevelB::initialise()
     
     m_game_state.bgm = Mix_LoadMUS("dooblydoo.mp3");
     Mix_PlayMusic(m_game_state.bgm, -1);
-    Mix_VolumeMusic(0.0f);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 2.0);
     
     m_game_state.jump_sfx = Mix_LoadWAV("bounce.wav");
+    
 }
 
 void LevelB::update(float delta_time)
 {
-    m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    int playerCollsion = m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    std::cout << "Player X: " << m_game_state.player->get_position().x << std::endl;
+    std::cout << "Player Y: " << m_game_state.player->get_position().y << std::endl;
+
+    for (int i = 0; i < ENEMY_COUNT; i++)
+    {
+        m_game_state.enemies[i].update(delta_time, m_game_state.player, NULL, 0, m_game_state.map);
+    }
+    
+//    if (m_game_state.player->get_position().y < -10.0f) m_game_state.next_scene_id = 1;
+
 }
 
 void LevelB::render(ShaderProgram *program)
 {
     m_game_state.map->render(program);
+    for (int i = 0; i < ENEMY_COUNT; i++)
+    {
+        if (m_game_state.enemies[i].isActive()){
+            m_game_state.enemies[i].render(program);
+        }
+    }
     m_game_state.player->render(program);
 }
 
