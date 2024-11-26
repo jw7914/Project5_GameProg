@@ -99,7 +99,15 @@ void LevelB::initialise()
         m_game_state.enemies[i].set_position(glm::vec3(1.0f, -5.0f, 0.0f));
     }
     
-    
+    GLuint heart_texture_id = Utility::load_texture("heart.png");
+    m_game_state.hearts = new Entity[3];
+    for (int i = 0; i < 3; i++) {
+        m_game_state.hearts[i] = Entity();
+        m_game_state.hearts[i].set_texture_id(heart_texture_id);
+        m_game_state.hearts[i].update(0.0f, NULL, NULL, 0, NULL);
+        m_game_state.hearts[i].set_scale(glm::vec3(0.5f,0.5f,0.0f));
+    }
+
     
     /**
      BGM and SFX
@@ -116,9 +124,32 @@ void LevelB::initialise()
 
 void LevelB::update(float delta_time)
 {
-    m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
-    std::cout << "Player X: " << m_game_state.player->get_position().x << std::endl;
-    std::cout << "Player Y: " << m_game_state.player->get_position().y << std::endl;
+    int player_collision = m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    //Death
+    if (player_collision == 1) {
+        m_game_state.death = true;
+        if (m_game_state.death) {
+            m_game_state.lives -= 1;
+            m_game_state.death = false;
+            m_game_state.reset = true;
+        }
+        if (m_game_state.lives == 0) {
+            m_game_state.lose = true;
+        }
+    }
+    if (m_game_state.reset) {
+        initialise();
+        m_game_state.reset = false;
+    }
+    
+    
+    glm::vec3 player_pos = m_game_state.player->get_position();
+    for (int i = 0; i < 3; i++) {
+        float spacing = 0.5f;
+        m_game_state.hearts[i].set_position(glm::vec3((player_pos.x + i * spacing) - 0.5f, player_pos.y + 1.0f, 0.0f));
+        m_game_state.hearts[i].update(0.0f, NULL, NULL, 0, NULL);
+    }
+    
 
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
@@ -137,6 +168,10 @@ void LevelB::render(ShaderProgram *program)
         if (m_game_state.enemies[i].isActive()){
             m_game_state.enemies[i].render(program);
         }
+    }
+    
+    for (int i = 0; i < m_game_state.lives; i++) {
+        m_game_state.hearts[i].render(program);
     }
     m_game_state.player->render(program);
 }

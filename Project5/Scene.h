@@ -25,6 +25,7 @@ struct GameState
     Map *map;
     Entity *player;
     Entity *enemies;
+    Entity *hearts;
     
     // ————— AUDIO ————— //
     Mix_Music *bgm;
@@ -32,11 +33,17 @@ struct GameState
     
     // ————— POINTERS TO OTHER SCENES ————— //
     int next_scene_id;
+    int lives = 3;
+    bool reset = false;
+    bool death = false;
+    bool won = false;
+    bool lose = false;
 };
 
 class Scene {
 protected:
     GameState m_game_state;
+
     
 public:
     // ————— ATTRIBUTES ————— //
@@ -50,4 +57,8 @@ public:
     // ————— GETTERS ————— //
     GameState const get_state() const { return m_game_state;             }
     int const get_number_of_enemies() const { return m_number_of_enemies; }
+    
+    // ————— SETTERS ————— //
+    void const set_number_of_lives(int live) { m_game_state.lives = live ; }
+
 };
