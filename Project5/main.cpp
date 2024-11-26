@@ -35,7 +35,7 @@
 #include "LevelA.h"
 #include "LevelB.h"
 #include "LevelC.h"
-
+#include "Title.h"
 
 // ––––– CONSTANTS ––––– //
 constexpr int WINDOW_WIDTH  = 640 * 2,
@@ -63,9 +63,9 @@ Scene  *g_current_scene;
 LevelA *g_levelA;
 LevelB *g_levelB;
 LevelC *g_levelC;
+Title *title_screen;
 
-
-Scene   *g_levels[3];
+Scene   *g_levels[4];
 
 SDL_Window* g_display_window;
 
@@ -123,81 +123,94 @@ void initialise()
     g_levelA = new LevelA();
     g_levelB = new LevelB();
     g_levelC = new LevelC();
+    title_screen = new Title();
 
     
     g_levels[0] = g_levelA;
     g_levels[1] = g_levelB;
     g_levels[2] = g_levelC;
+    g_levels[3] = title_screen;
 
     
     // Start at level A
-    switch_to_scene(g_levels[0]);
+    switch_to_scene(g_levels[3]);
     
 }
 
 void process_input()
 {
     // VERY IMPORTANT: If nothing is pressed, we don't want to go anywhere
-    g_current_scene->get_state().player->set_movement(glm::vec3(0.0f));
-    g_current_scene->get_state().player->set_animation_state(DEFAULT);
-
+    if (g_current_scene != g_levels[3]){
+        g_current_scene->get_state().player->set_movement(glm::vec3(0.0f));
+        g_current_scene->get_state().player->set_animation_state(DEFAULT);
+    }
+    
     SDL_Event event;
-    while (SDL_PollEvent(&event))
-    {
-        switch (event.type) {
-            // End game
-            case SDL_QUIT:
-            case SDL_WINDOWEVENT_CLOSE:
-                g_app_status = TERMINATED;
-                break;
-                
-            case SDL_KEYDOWN:
-                switch (event.key.keysym.sym) {
-                    case SDLK_q:
-                        // Quit the game with a keystroke
-                        g_app_status = TERMINATED;
-                        break;
-                        
-                    case SDLK_SPACE:
-                        // Jump
-                        if (g_current_scene->get_state().player->get_collided_bottom())
-                        {
-                            g_current_scene->get_state().player->jump();
-                            Mix_PlayChannel(-1, g_current_scene->get_state().jump_sfx, 0);
-                        }
-                        break;
-                        
-                    default:
-                        break;
-                }
-                
-            default:
-                break;
+    if (!g_current_scene->get_state().lose) {
+        while (SDL_PollEvent(&event))
+        {
+            switch (event.type) {
+                    // End game
+                case SDL_QUIT:
+                case SDL_WINDOWEVENT_CLOSE:
+                    g_app_status = TERMINATED;
+                    break;
+                    
+                case SDL_KEYDOWN:
+                    switch (event.key.keysym.sym) {
+                        case SDLK_q:
+                            // Quit the game with a keystroke
+                            g_app_status = TERMINATED;
+                            break;
+                            
+                        case SDLK_SPACE:
+                            // Jump
+                            if (g_current_scene != g_levels[3]){
+                                if (g_current_scene->get_state().player->get_collided_bottom())
+                                {
+                                    g_current_scene->get_state().player->jump();
+                                    Mix_PlayChannel(-1, g_current_scene->get_state().jump_sfx, 0);
+                                }
+                            }
+                            break;
+                        case SDLK_RETURN:
+                            if (g_current_scene == g_levels[3])
+                                switch_to_scene(g_levels[0]);
+                            
+                        default:
+                            break;
+                    }
+                    
+                default:
+                    break;
+            }
         }
-    }
-    
-    const Uint8 *key_state = SDL_GetKeyboardState(NULL);
         
-    if (key_state[SDL_SCANCODE_A]) {
-        g_current_scene->get_state().player->attack();
-        attacking = true;
+        const Uint8 *key_state = SDL_GetKeyboardState(NULL);
+        
+        if (key_state[SDL_SCANCODE_A]) {
+            g_current_scene->get_state().player->attack();
+            attacking = true;
+        }
+        else {
+            attacking = false;
+        }
+        
+        if (!attacking){
+            if (key_state[SDL_SCANCODE_LEFT])        g_current_scene->get_state().player->move_left();
+            else if (key_state[SDL_SCANCODE_RIGHT])  g_current_scene->get_state().player->move_right();
+        }
+        
+        
+        if (glm::length( g_current_scene->get_state().player->get_movement()) > 1.0f)
+            g_current_scene->get_state().player->normalise_movement();
     }
-    else {
-        attacking = false;
-    }
-    
-    if (!attacking){
-        if (key_state[SDL_SCANCODE_LEFT])        g_current_scene->get_state().player->move_left();
-        else if (key_state[SDL_SCANCODE_RIGHT])  g_current_scene->get_state().player->move_right();
-    }
-     
-             
-    if (glm::length( g_current_scene->get_state().player->get_movement()) > 1.0f)
-        g_current_scene->get_state().player->normalise_movement();
 }
+
 
 void update()
 {
+
     float ticks = (float)SDL_GetTicks() / MILLISECONDS_IN_SECOND;
     float delta_time = ticks - g_previous_ticks;
     g_previous_ticks = ticks;
@@ -224,7 +237,6 @@ void update()
     
     // Prevent the camera from showing anything outside of the "edge" of the level
     g_view_matrix = glm::mat4(1.0f);
-    
     if (g_current_scene->get_state().player->get_position().x > LEFT_EDGE) {
         g_view_matrix = glm::translate(g_view_matrix, glm::vec3(-g_current_scene->get_state().player->get_position().x, 3.75, 0));
     } else {
@@ -242,7 +254,6 @@ void update()
         switch_to_scene(g_levelC);
         g_current_scene->set_number_of_lives(currLives);
     }
-    
 }
 
 void render()
@@ -263,6 +274,7 @@ void shutdown()
     delete g_levelA;
     delete g_levelB;
     delete g_levelC;
+    delete title_screen;
 }
 
 // ––––– DRIVER GAME LOOP ––––– //

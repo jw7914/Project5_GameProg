@@ -114,11 +114,11 @@ void LevelB::initialise()
      */
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
     
-    m_game_state.bgm = Mix_LoadMUS("dooblydoo.mp3");
+    m_game_state.bgm = Mix_LoadMUS("galactic.mp3");
     Mix_PlayMusic(m_game_state.bgm, -1);
     Mix_VolumeMusic(MIX_MAX_VOLUME / 2.0);
     
-    m_game_state.jump_sfx = Mix_LoadWAV("bounce.wav");
+    m_game_state.jump_sfx = Mix_LoadWAV("jump-3-236683.wav");
     
 }
 
@@ -162,16 +162,30 @@ void LevelB::update(float delta_time)
 
 void LevelB::render(ShaderProgram *program)
 {
+    int num_active = 1;
     m_game_state.map->render(program);
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
         if (m_game_state.enemies[i].isActive()){
             m_game_state.enemies[i].render(program);
         }
+        else {
+            num_active -= 1;
+        }
     }
-    
     for (int i = 0; i < m_game_state.lives; i++) {
         m_game_state.hearts[i].render(program);
+    }
+    
+    if (m_game_state.lose) {
+        GLuint g_font_texture_id = Utility::load_texture("font1.png");
+        Utility::draw_text(program, g_font_texture_id, "Player Lose", 0.5f, 0.05f,
+              glm::vec3(8.0f,-1.0f,0.0f));
+    }
+    if (num_active == 0) {
+        GLuint g_font_texture_id = Utility::load_texture("font1.png");
+        Utility::draw_text(program, g_font_texture_id, "Level Clear", 0.5f, 0.05f,
+              glm::vec3(4.0f,-4.0f,0.0f));
     }
     m_game_state.player->render(program);
 }
