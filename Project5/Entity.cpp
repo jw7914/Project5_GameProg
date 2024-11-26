@@ -34,11 +34,18 @@ void Entity::ai_activate(Entity *player, float delta_time)
         }
     }
     
-    if (m_ai_type ==  WALKING) {
+    if (m_ai_type == WALKING) {
+        // Determine movement direction on the x-axis
         if (m_position.x > player->get_position().x) {
-            m_movement = glm::vec3(-1.0f, 0.0f, 0.0f);
-        } else {
-            m_movement = glm::vec3(1.0f, 0.0f, 0.0f);
+            m_movement.x = -1.0f;
+        } else if (m_position.x < player->get_position().x) {
+            m_movement.x = 1.0f;
+        }
+
+        // Determine movement direction on the y-axis
+        if (m_position.y < player->get_position().y && m_collided_bottom) {
+            set_jumping_power(5.0f);
+            jump();
         }
     }
 }
