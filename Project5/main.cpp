@@ -146,7 +146,6 @@ void process_input()
     }
     
     SDL_Event event;
-    if (!g_current_scene->get_state().lose) {
         while (SDL_PollEvent(&event))
         {
             switch (event.type) {
@@ -166,7 +165,7 @@ void process_input()
                         case SDLK_SPACE:
                             // Jump
                             if (g_current_scene != g_levels[3]){
-                                if (g_current_scene->get_state().player->get_collided_bottom())
+                                if (g_current_scene->get_state().player->get_collided_bottom() && !g_current_scene->get_state().lose)
                                 {
                                     g_current_scene->get_state().player->jump();
                                     Mix_PlayChannel(-1, g_current_scene->get_state().jump_sfx, 0);
@@ -186,8 +185,10 @@ void process_input()
             }
         }
         
+    
         const Uint8 *key_state = SDL_GetKeyboardState(NULL);
         
+    if (!g_current_scene->get_state().lose){
         if (key_state[SDL_SCANCODE_A]) {
             g_current_scene->get_state().player->attack();
             attacking = true;
