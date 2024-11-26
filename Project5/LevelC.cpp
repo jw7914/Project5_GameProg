@@ -171,7 +171,7 @@ void LevelC::render(ShaderProgram *program)
     if (m_game_state.lose) {
         GLuint g_font_texture_id = Utility::load_texture("font1.png");
         Utility::draw_text(program, g_font_texture_id, "Player Lose", 0.5f, 0.05f,
-              glm::vec3(6.0f,-1.0f,0.0f));
+              glm::vec3(7.0f,-1.0f,0.0f));
     }
     if (num_active == 0) {
         GLuint g_font_texture_id = Utility::load_texture("font1.png");

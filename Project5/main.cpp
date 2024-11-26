@@ -206,6 +206,9 @@ void process_input()
         if (glm::length( g_current_scene->get_state().player->get_movement()) > 1.0f)
             g_current_scene->get_state().player->normalise_movement();
     }
+    else {
+        g_current_scene->get_state().player->set_animation_state(DEATH);
+    }
 }
 
 
