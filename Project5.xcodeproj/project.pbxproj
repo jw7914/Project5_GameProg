@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842DC67A2CA645EF0052A9C3 /* starter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842DC6782CA645EF0052A9C3 /* starter.cpp */; };
-		84651B1A2C17ED4900817E28 /* completed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84651B192C17ED4900817E28 /* completed.cpp */; };
 		BF6AAD372CF414E900690510 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD362CF414E900690510 /* Map.cpp */; };
 		BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD392CF4150900690510 /* Entity.cpp */; };
 		BF6AAD4D2CF4176500690510 /* enemy1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD3B2CF416FE00690510 /* enemy1.png */; };
@@ -32,6 +30,8 @@
 		BF6AAD7D2CF5054A00690510 /* george_0.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD772CF504C200690510 /* george_0.png */; };
 		BF6AAD802CF5054A00690510 /* tileset.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD7A2CF504C200690510 /* tileset.png */; };
 		BF6AAD832CF533E600690510 /* Title.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD822CF533E600690510 /* Title.cpp */; };
+		BF6AAD862CF5408300690510 /* LevelC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAD852CF5408300690510 /* LevelC.cpp */; };
+		BF6AAD882CF5881F00690510 /* heart.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6AAD872CF587A600690510 /* heart.png */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -59,6 +59,7 @@
 				BF6AAD6A2CF502F700690510 /* Meow-Knight_Dodge.png in CopyFiles */,
 				BF6AAD6B2CF502F700690510 /* Meow-Knight_Idle.png in CopyFiles */,
 				BF6AAD7B2CF5054A00690510 /* bounce.wav in CopyFiles */,
+				BF6AAD882CF5881F00690510 /* heart.png in CopyFiles */,
 				BF6AAD7C2CF5054A00690510 /* dooblydoo.mp3 in CopyFiles */,
 				BF6AAD7D2CF5054A00690510 /* george_0.png in CopyFiles */,
 				BF6AAD802CF5054A00690510 /* tileset.png in CopyFiles */,
@@ -72,8 +73,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		842DC6782CA645EF0052A9C3 /* starter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = starter.cpp; sourceTree = "<group>"; };
-		84651B192C17ED4900817E28 /* completed.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = completed.cpp; sourceTree = "<group>"; };
 		BF6AAD352CF414E900690510 /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		BF6AAD362CF414E900690510 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		BF6AAD382CF4150900690510 /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
@@ -104,6 +103,9 @@
 		BF6AAD7A2CF504C200690510 /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 		BF6AAD812CF533E600690510 /* Title.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
 		BF6AAD822CF533E600690510 /* Title.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Title.cpp; sourceTree = "<group>"; };
+		BF6AAD842CF5408300690510 /* LevelC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelC.h; sourceTree = "<group>"; };
+		BF6AAD852CF5408300690510 /* LevelC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelC.cpp; sourceTree = "<group>"; };
+		BF6AAD872CF587A600690510 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* Project5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project5; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -134,15 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84651B182C17ED2400817E28 /* files */ = {
-			isa = PBXGroup;
-			children = (
-				84651B192C17ED4900817E28 /* completed.cpp */,
-				842DC6782CA645EF0052A9C3 /* starter.cpp */,
-			);
-			path = files;
-			sourceTree = "<group>";
-		};
 		DBDF1B462323DE3F007CECB1 = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +162,6 @@
 				BF6AAD702CF503E900690510 /* LevelB.cpp */,
 				BF6AAD5A2CF418B100690510 /* Utility.h */,
 				BF6AAD5B2CF418B100690510 /* Utility.cpp */,
-				84651B182C17ED2400817E28 /* files */,
 				DBDF1B5B2323DE8D007CECB1 /* glm */,
 				DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */,
 				DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */,
@@ -200,6 +192,9 @@
 				BF6AAD7A2CF504C200690510 /* tileset.png */,
 				BF6AAD812CF533E600690510 /* Title.h */,
 				BF6AAD822CF533E600690510 /* Title.cpp */,
+				BF6AAD842CF5408300690510 /* LevelC.h */,
+				BF6AAD852CF5408300690510 /* LevelC.cpp */,
+				BF6AAD872CF587A600690510 /* heart.png */,
 			);
 			path = Project5;
 			sourceTree = "<group>";
@@ -273,9 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84651B1A2C17ED4900817E28 /* completed.cpp in Sources */,
 				BF6AAD372CF414E900690510 /* Map.cpp in Sources */,
-				842DC67A2CA645EF0052A9C3 /* starter.cpp in Sources */,
+				BF6AAD862CF5408300690510 /* LevelC.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
 				BF6AAD3A2CF4150900690510 /* Entity.cpp in Sources */,
 				BF6AAD712CF503E900690510 /* LevelB.cpp in Sources */,
