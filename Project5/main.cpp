@@ -232,8 +232,16 @@ void update()
     }
     
     
-    if (g_current_scene == g_levelA && g_current_scene->get_state().player->get_position().y < -10.0f) switch_to_scene(g_levelB);
-    if (g_current_scene == g_levelB && g_current_scene->get_state().player->get_position().y < -10.0f) switch_to_scene(g_levelC);
+    if (g_current_scene == g_levelA && g_current_scene->get_state().player->get_position().y < -10.0f) {
+        int currLives = g_current_scene->get_state().lives;
+        switch_to_scene(g_levelB);
+        g_current_scene->set_number_of_lives(currLives);
+    }
+    if (g_current_scene == g_levelB && g_current_scene->get_state().player->get_position().y < -10.0f){
+        int currLives = g_current_scene->get_state().lives;
+        switch_to_scene(g_levelC);
+        g_current_scene->set_number_of_lives(currLives);
+    }
     
 }
 
