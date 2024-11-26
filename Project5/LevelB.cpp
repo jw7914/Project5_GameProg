@@ -116,7 +116,7 @@ void LevelB::initialise()
 
 void LevelB::update(float delta_time)
 {
-    int playerCollsion = m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
+    m_game_state.player->update(delta_time, m_game_state.player, m_game_state.enemies, ENEMY_COUNT, m_game_state.map);
     std::cout << "Player X: " << m_game_state.player->get_position().x << std::endl;
     std::cout << "Player Y: " << m_game_state.player->get_position().y << std::endl;
 
@@ -125,7 +125,7 @@ void LevelB::update(float delta_time)
         m_game_state.enemies[i].update(delta_time, m_game_state.player, NULL, 0, m_game_state.map);
     }
     
-//    if (m_game_state.player->get_position().y < -10.0f) m_game_state.next_scene_id = 1;
+    if (m_game_state.player->get_position().y < -10.0f) m_game_state.next_scene_id = 2;
 
 }
 

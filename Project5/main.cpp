@@ -11,9 +11,9 @@
 #define GL_SILENCE_DEPRECATION
 #define GL_GLEXT_PROTOTYPES 1
 #define FIXED_TIMESTEP 0.0166666f
-#define LEVEL1_WIDTH 14
-#define LEVEL1_HEIGHT 8
-#define LEVEL1_LEFT_EDGE 5.0f
+#define LEFT_EDGE 5.0f
+#define RIGHT_EDGE 13.0f
+
 
 #ifdef _WINDOWS
 #include <GL/glew.h>
@@ -34,6 +34,8 @@
 #include "Scene.h"
 #include "LevelA.h"
 #include "LevelB.h"
+#include "LevelC.h"
+
 
 // ––––– CONSTANTS ––––– //
 constexpr int WINDOW_WIDTH  = 640 * 2,
@@ -60,8 +62,10 @@ enum AppStatus { RUNNING, TERMINATED };
 Scene  *g_current_scene;
 LevelA *g_levelA;
 LevelB *g_levelB;
+LevelC *g_levelC;
 
-Scene   *g_levels[2];
+
+Scene   *g_levels[3];
 
 SDL_Window* g_display_window;
 
@@ -118,9 +122,13 @@ void initialise()
 
     g_levelA = new LevelA();
     g_levelB = new LevelB();
+    g_levelC = new LevelC();
+
     
     g_levels[0] = g_levelA;
     g_levels[1] = g_levelB;
+    g_levels[2] = g_levelC;
+
     
     // Start at level A
     switch_to_scene(g_levels[0]);
@@ -217,13 +225,15 @@ void update()
     // Prevent the camera from showing anything outside of the "edge" of the level
     g_view_matrix = glm::mat4(1.0f);
     
-    if (g_current_scene->get_state().player->get_position().x > LEVEL1_LEFT_EDGE) {
+    if (g_current_scene->get_state().player->get_position().x > LEFT_EDGE) {
         g_view_matrix = glm::translate(g_view_matrix, glm::vec3(-g_current_scene->get_state().player->get_position().x, 3.75, 0));
     } else {
         g_view_matrix = glm::translate(g_view_matrix, glm::vec3(-5, 3.75, 0));
     }
     
+    
     if (g_current_scene == g_levelA && g_current_scene->get_state().player->get_position().y < -10.0f) switch_to_scene(g_levelB);
+    if (g_current_scene == g_levelB && g_current_scene->get_state().player->get_position().y < -10.0f) switch_to_scene(g_levelC);
     
 }
 
@@ -244,6 +254,7 @@ void shutdown()
     
     delete g_levelA;
     delete g_levelB;
+    delete g_levelC;
 }
 
 // ––––– DRIVER GAME LOOP ––––– //
