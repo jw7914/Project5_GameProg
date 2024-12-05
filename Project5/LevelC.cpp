@@ -114,7 +114,7 @@ void LevelC::initialise()
     Mix_PlayMusic(m_game_state.bgm, -1);
     Mix_VolumeMusic(MIX_MAX_VOLUME / 2.0);
     
-    m_game_state.jump_sfx = Mix_LoadWAV("jump-3-236683.wav");
+    m_game_state.jump_sfx = Mix_LoadWAV("/Users/jasonwu/Desktop/Coding/CompSciClasses/Game_Programming/Project5_GameProg/Project5/retro-jump-3-236683.wav");
 }
 
 void LevelC::update(float delta_time)
